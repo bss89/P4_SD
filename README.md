@@ -30,15 +30,14 @@ When a node wants to enter the critical section makes the following steps:
 
 - node.py 
   Implements the full node logic for Maekawa’s mutual exclusion, including:
-  Lamport timestamp (lamport_ts)
-  Quorum membership (collegues)
-  Voting state (voted_for)
-  Request queue for postponed votes (request_queue)
-  Synchronization via Condition() (reply_condition)
-  Tracking of received votes (reply_received)
-  Critical-section state (RELEASED, REQUESTED, HELD)
-  request_access() — sends REQUESTs and waits for all votes
-  release_access() — sends RELEASE and resets state
+  - Lamport timestamp (lamport_ts)
+  - Quorum membership (collegues)
+  - Voting state (voted_for)
+  - Request queue for postponed votes 
+  - Synchronization with Condition() 
+  - Tracking of received votes 
+  - Critical-section state (RELEASED, REQUESTED, HELD)
+
   
   The main loop simulates the node repeatedly requesting, entering, and releasing the critical section.All messages are created 
   using the Message class and sent through NodeSend.
